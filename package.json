@@ -1,9 +1,7 @@
 {
-  "name": "Manny Flo IT App",
-  "version": "1.0",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "4.14.0"
+    "express": "^4.16.3"
   },
   "scripts": {
     "start": "node server.js"

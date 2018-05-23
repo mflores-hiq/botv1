@@ -38,7 +38,7 @@ app.post('/', (req, res) => {
       trigger_id,
       dialog: JSON.stringify({
         title: 'Submit a helpdesk ticket',
-        callback_id: 'submit-ticket',
+        callback_id: 'bug_report',
         submit_label: 'Submit',
         elements: [
           {

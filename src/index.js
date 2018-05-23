@@ -86,7 +86,7 @@ app.post('/', (req, res) => {
 /*
  * Endpoint to receive the dialog submission. Checks the verification token
  * and creates a Helpdesk ticket
- */
+ *//*
 app.post('/interactive-component', (req, res) => {
   const body = JSON.parse(req.body.payload);
 
@@ -104,7 +104,7 @@ app.post('/interactive-component', (req, res) => {
     debug('Token mismatch');
     res.sendStatus(500);
   }
-});
+});*/
 
 app.listen(process.env.PORT, () => {
   console.log(`App listening on port ${process.env.PORT}!`);

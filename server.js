@@ -1,14 +1,18 @@
-var express = require('express')
-var app = express()
-
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
-
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
+'use strict'; 
+const express = require('express'); 
+const bodyParser = require('body-parser'); 
+const app = express(); 
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true })); 
+const server = app.listen(3000, () => { console.log('Express server listening on port %d in %s mode', server.address().port,   app.settings.env);});
 
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+app.post('/', (req, res) => { 
+let data = { 
+  response_type: 'in_channel', // public to the channel 
+  text: '302: Found', 
+  attachments:[ { 
+    image_url: 'https://http.cat/302.jpg' 
+  } ]}; 
+res.json(data);
+});

@@ -1,11 +1,8 @@
-'use strict'; 
-const express = require('express'); 
-const bodyParser = require('body-parser'); 
-const app = express(); 
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true })); 
-const server = app.listen(3000, () => { console.log('Express server   listening on port %d in %s mode', server.address().port,   app.settings.env);});
+var express = require('express')
+var app = express()
 
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
   response.send('Hello World!')
